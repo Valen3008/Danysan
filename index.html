@@ -161,6 +161,50 @@
         padding: 8px;      /* Menos padding si querés, o dejá 12/16px si te gusta más espacio */
     }
 }
+    @media (max-width: 600px) {
+  body::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(128, 0, 128, 0.6) 0%,
+      rgba(0,0,0,0.2) 25%,
+      rgba(0,0,0,0.2) 75%,
+      rgba(128, 0, 128, 0.6) 100%
+    );
+    /* Hace que el degradado sea vertical y más suave en el centro */
+  }
+}
+    /* Para teléfonos y tablets: zoom al fondo y más espacio entre elementos */
+@media (max-width: 900px) {
+  body::before {
+    /* ¡ZOOM! El degradado radial se hace mucho más grande */
+    background: radial-gradient(circle at 50% 50%, rgba(128, 0, 128, 0.45) 0%, rgba(128, 0, 128, 0.25) 40%, rgba(0,0,0,0.92) 90%);
+    transform: scale(2.2); /* Esto es el "zoom" */
+    filter: blur(0.5px);   /* Suaviza el borde del difuminado */
+  }
+  .container {
+    min-height: 80vh;  /* La caja se estira, así los elementos no quedan todos juntos */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .slogan {
+    margin-bottom: 32px;
+    margin-top: 0;
+  }
+  .logo-container {
+    margin-bottom: 32px;
+  }
+  .whatsapp-button-container {
+    margin-top: 32px;
+  }
+  .info-adicional {
+    margin-top: 32px;
+  }
+}
 }
         
     </style>
