@@ -6,84 +6,70 @@
     <title>¡Juga y Gana con Danysan!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-    html {
+    html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
+        box-sizing: border-box;
         overflow: hidden;
     }
-
     body {
-        margin: 0;
-        padding: 0;
         font-family: 'Poppins', sans-serif;
-        background-color: #000000;
-        color: #FFFFFF;
+        background-color: #000;
+        color: #fff;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        width: 100vw;
-        position: relative;
         text-align: center;
-        box-sizing: border-box;
-        overflow: hidden;
+        position: relative;
     }
-
-    /* Fondo degradado (PC por defecto) */
     body::before {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: radial-gradient(circle at center, rgba(128, 0, 128, 0.4) 0%, rgba(0, 0, 0, 1) 70%);
+        background:
+            linear-gradient(to bottom, #000 0%, transparent 20%, transparent 80%, #000 100%),
+            radial-gradient(circle at center, rgba(128,0,128,0.5) 0%, rgba(0,0,0,0.7) 80%);
         z-index: -1;
         pointer-events: none;
-        transition: background 0.4s, transform 0.4s;
     }
-
     .container {
         max-width: 500px;
-        margin: 40px auto;
-        padding: 24px;
-        box-sizing: border-box;
-        z-index: 1;
-        /* Sin fondo blanco, ni color oscuro */
+        width: 95vw;
+        padding: 24px 12px;
         border-radius: 18px;
-        box-shadow: none;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 1;
     }
-
+    .slogan {
+        font-size: 1.8em;
+        font-weight: 600;
+        margin-bottom: 36px;
+        color: #fff;
+        animation: fadeIn 2.5s ease-out;
+    }
     .logo-container {
-        margin-bottom: 40px;
+        margin-bottom: 36px;
         animation: fadeIn 2s ease-out;
     }
-
     .logo {
         width: 200px;
         height: auto;
         display: block;
         margin: 0 auto;
     }
-
-    .slogan {
-        font-size: 1.8em;
-        font-weight: 600;
-        margin-bottom: 60px;
-        color: #fff;
-        animation: fadeIn 2.5s ease-out;
-    }
-
     .whatsapp-button-container {
-        margin-top: 40px;
+        margin-top: 36px;
         animation: fadeIn 3s ease-out;
         width: 100%;
         text-align: center;
     }
-
     .whatsapp-button {
         display: inline-flex;
         align-items: center;
@@ -99,7 +85,6 @@
         cursor: pointer;
         box-shadow: 0 0 15px rgba(128, 0, 128, 0.1);
     }
-
     .whatsapp-button:hover {
         background-color: #800080;
         border-color: #800080;
@@ -107,14 +92,12 @@
         transform: translateY(-5px);
         box-shadow: 0 0 25px rgba(128, 0, 128, 0.25);
     }
-
     .whatsapp-icon {
         width: 24px;
         height: 24px;
         margin-right: 10px;
         vertical-align: middle;
     }
-
     .info-adicional {
         margin-top: 28px;
         font-size: 1em;
@@ -124,65 +107,21 @@
         letter-spacing: 0.03em;
         text-align: center;
     }
-
-    /* Animación de aparición */
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
-    /* --- RESPONSIVIDAD: TABLET Y TELÉFONO --- */
     @media (max-width: 900px) {
-        body::before {
-            background: radial-gradient(circle at 50% 50%, rgba(128, 0, 128, 0.45) 0%, rgba(128, 0, 128, 0.25) 40%, rgba(0,0,0,0.92) 90%);
-            transform: scale(2.2);
-            filter: blur(1px);
-        }
-        .container {
-            min-height: 80vh;
-            padding: 40px 8px;
-            max-width: 99vw;
-            border-radius: 14px;
-        }
-        .slogan {
-            margin-bottom: 36px;
-            font-size: 1.4em;
-        }
-        .logo-container {
-            margin-bottom: 32px;
-        }
-        .logo {
-            width: 140px;
-        }
-        .whatsapp-button-container {
-            margin-top: 32px;
-        }
-        .whatsapp-button {
-            font-size: 1em;
-            padding: 12px 20px;
-        }
-        .info-adicional {
-            margin-top: 28px;
-            font-size: 0.95em;
-        }
+        .logo { width: 140px; }
+        .container { max-width: 99vw; }
+        .slogan { font-size: 1.4em; }
+        .whatsapp-button { font-size: 1em; padding: 12px 20px; }
     }
     @media (max-width: 600px) {
-        .container {
-            min-height: 76vh;
-            padding: 20px 4px;
-            border-radius: 11px;
-        }
-        .logo {
-            width: 110px;
-        }
-        .slogan {
-            font-size: 1.1em;
-            margin-bottom: 24px;
-        }
-        .info-adicional {
-            margin-top: 18px;
-            font-size: 0.92em;
-        }
+        .logo { width: 110px; }
+        .slogan { font-size: 1.1em; }
+        .container { padding: 14px 3vw; }
+        .info-adicional { font-size: 0.92em; }
     }
     </style>
 </head>
@@ -191,11 +130,9 @@
         <div class="slogan">
             ¡JUGÁ Y GANÁ CON NOSOTROS!
         </div>
-
         <div class="logo-container">
             <img src="https://i.imgur.com/up4jHiI.png" alt="Danysan Logo" class="logo">
         </div>
-
         <div class="whatsapp-button-container">
             <a href="https://wa.link/fase43" target="_blank" class="whatsapp-button" id="whatsappBtn">
                 <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
@@ -208,7 +145,6 @@
         </div>
         </div>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mainColor = '#800080';
