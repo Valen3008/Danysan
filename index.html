@@ -141,6 +141,21 @@
                 width: 120px;
             }
         }
+
+        .info-adicional {
+    margin-top: 28px;          /* Espaciado superior, igual que el resto */
+    font-size: 1em;            /* Un poco más chico que el resto */
+    color: #cccccc;            /* Un gris claro para menor jerarquía */
+    font-weight: 400;          /* Normal */
+    opacity: 0.85;             /* Menos destacado */
+    letter-spacing: 0.03em;    /* Opcional: un poco más legible */
+}
+@media (max-width: 480px) {
+    .info-adicional {
+        font-size: 0.95em;
+        margin-top: 20px;
+    }
+}
     </style>
 </head>
 <body>
@@ -160,7 +175,9 @@
 </svg>
                 CREA TU USUARIO
             </a>
-        </div>
+        <div class="info-adicional">
+    atención 24hs, sin mínimo de carga y bajadas libres
+</div>
     </div>
 
     <script>
