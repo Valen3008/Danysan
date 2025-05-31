@@ -44,13 +44,13 @@
       width: 96vw;
       max-width: 410px;
       min-height: 70vh;
-      /* Fondo/transparencia solo para móvil, se quita en PC */
-      background: none;
+      /* SIN fondo, sin borde, sin blur, sin sombra en ningún lado */
+      background: none !important;
       padding: 28px 16px;
       box-sizing: border-box;
-      border-radius: 0;
-      backdrop-filter: none;
-      box-shadow: none;
+      border-radius: 0 !important;
+      backdrop-filter: none !important;
+      box-shadow: none !important;
       z-index: 1;
     }
     .logo-container {
@@ -142,10 +142,6 @@
         justify-content: space-between;
         gap: 30px;
         padding: 18px 4vw 16px 4vw;
-        background: rgba(20,0,20,0.17);
-        border-radius: 26px;
-        backdrop-filter: blur(3px);
-        box-shadow: 0 10px 32px 0 rgba(128,0,128,0.13);
       }
       .slogan {
         font-size: 1.45em;
