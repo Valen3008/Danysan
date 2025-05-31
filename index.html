@@ -6,207 +6,185 @@
     <title>¡Juga y Gana con Danysan!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-    /* Estilos CSS aquí */
-    html { /* NUEVO: Asegurar que el elemento HTML base ocupe todo */
+    html {
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
-        overflow: hidden; /* Para evitar barras de scroll en el HTML si el body se ajusta bien */
+        overflow: hidden;
     }
 
     body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000000;
-    color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100vw;
-    position: relative; /* ¡Esto es CLAVE! */
-    text-align: center;
-    box-sizing: border-box;
-    overflow: hidden; /* Opcional, pero puede ayudar */
-}
-
-    /* ... (el resto de tus estilos CSS permanecen igual) ... */
-
-
-        /* Degradado de fondo */
-        body::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at center, rgba(128, 0, 128, 0.4) 0%, rgba(0, 0, 0, 1) 70%);
-    z-index: -1;
-}
-        }
-
-        .container {
-            max-width: 90%; /* Ajuste para móviles */
-            padding: 20px;
-            box-sizing: border-box;
-            z-index: 1; /* Para que el contenido esté por encima del degradado */
-        }
-
-        .logo-container {
-            margin-bottom: 40px; /* Espacio debajo del logo */
-            animation: fadeIn 2s ease-out; /* Animación de aparición */
-        }
-
-        .logo {
-            width: 200px; /* Tamaño del logo */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .slogan {
-            font-size: 1.8em; /* Tamaño de fuente para "Juga y Gana" */
-            font-weight: 600; /* Más negrita */
-            margin-bottom: 60px; /* Espacio debajo del slogan */
-            animation: fadeIn 2.5s ease-out; /* Animación de aparición */
-        }
-
-        .whatsapp-button-container {
-            margin-top: 40px;
-            animation: fadeIn 3s ease-out; /* Animación de aparición */
-        }
-
-        .whatsapp-button {
-            display: inline-flex; /* Permite alinear el ícono y el texto */
-            align-items: center; /* Alinea verticalmente */
-            padding: 15px 30px;
-            border: 2px solid #FFFFFF; /* Borde blanco */
-            background-color: transparent; /* Fondo transparente */
-            color: #FFFFFF; /* Texto blanco */
-            font-size: 1.2em; /* Tamaño de fuente del botón */
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px; /* Bordes redondeados */
-            transition: all 0.3s ease; /* Transición suave para el efecto hover */
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra sutil */
-        }
-
-        .whatsapp-button:hover {
-            background-color: var(--main-color); /* El color principal definido por JS */
-            border-color: var(--main-color);
-            color: #000000; /* Texto oscuro al pasar el cursor */
-            transform: translateY(-5px); /* Pequeño efecto de elevación */
-            box-shadow: 0 0 25px var(--main-color-shadow); /* Sombra de color principal */
-        }
-
-        .whatsapp-icon {
-            width: 24px; /* Tamaño del ícono de WhatsApp */
-            height: 24px;
-            margin-right: 10px; /* Espacio entre el ícono y el texto */
-            vertical-align: middle; /* Alineación vertical */
-        }
-
-        /* Animación de aparición */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Media Queries para responsividad */
-        @media (max-width: 768px) {
-            .slogan {
-                font-size: 1.5em;
-            }
-            .whatsapp-button {
-                font-size: 1em;
-                padding: 12px 25px;
-            }
-            .logo {
-                width: 150px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .slogan {
-                font-size: 1.2em;
-                margin-bottom: 40px;
-            }
-            .whatsapp-button {
-                font-size: 0.9em;
-                padding: 10px 20px;
-            }
-            .logo {
-                width: 120px;
-            }
-        }
-
-        .info-adicional {
-    margin-top: 28px;          /* Espaciado superior, igual que el resto */
-    font-size: 1em;            /* Un poco más chico que el resto */
-    color: #cccccc;            /* Un gris claro para menor jerarquía */
-    font-weight: 400;          /* Normal */
-    opacity: 0.85;             /* Menos destacado */
-    letter-spacing: 0.03em;    /* Opcional: un poco más legible */
-}
-@media (max-width: 480px) {
-    .info-adicional {
-        font-size: 0.95em;
-        margin-top: 20px;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #000000;
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100vw;
+        position: relative;
+        text-align: center;
+        box-sizing: border-box;
+        overflow: hidden;
     }
-    @media (max-width: 480px) {
+
+    /* Fondo degradado (PC por defecto) */
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(circle at center, rgba(128, 0, 128, 0.4) 0%, rgba(0, 0, 0, 1) 70%);
+        z-index: -1;
+        pointer-events: none;
+        transition: background 0.4s, transform 0.4s;
+    }
+
     .container {
-        max-width: 96%;    /* Más angosto, así no queda pegado al borde */
-        padding: 8px;      /* Menos padding si querés, o dejá 12/16px si te gusta más espacio */
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 24px;
+        box-sizing: border-box;
+        z-index: 1;
+        background: white;
+        color: #222;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}
+
+    .logo-container {
+        margin-bottom: 40px;
+        animation: fadeIn 2s ease-out;
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .slogan {
+        font-size: 1.8em;
+        font-weight: 600;
+        margin-bottom: 60px;
+        color: #800080;
+        animation: fadeIn 2.5s ease-out;
+    }
+
+    .whatsapp-button-container {
+        margin-top: 40px;
+        animation: fadeIn 3s ease-out;
+        width: 100%;
+        text-align: center;
+    }
+
+    .whatsapp-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 15px 30px;
+        border: 2px solid #800080;
+        background-color: transparent;
+        color: #800080;
+        font-size: 1.2em;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(128, 0, 128, 0.1);
+    }
+
+    .whatsapp-button:hover {
+        background-color: #800080;
+        border-color: #800080;
+        color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 0 25px rgba(128, 0, 128, 0.25);
+    }
+
+    .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .info-adicional {
+        margin-top: 28px;
+        font-size: 1em;
+        color: #666;
+        font-weight: 400;
+        opacity: 0.85;
+        letter-spacing: 0.03em;
+        text-align: center;
+    }
+
+    /* Animación de aparición */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- RESPONSIVIDAD: TABLET Y TELÉFONO --- */
+    @media (max-width: 900px) {
+        body::before {
+            background: radial-gradient(circle at 50% 50%, rgba(128, 0, 128, 0.45) 0%, rgba(128, 0, 128, 0.25) 40%, rgba(0,0,0,0.92) 90%);
+            transform: scale(2.2);
+            filter: blur(1px);
+        }
+        .container {
+            min-height: 80vh;
+            padding: 40px 8px;
+            max-width: 99vw;
+            border-radius: 14px;
+        }
+        .slogan {
+            margin-bottom: 36px;
+            font-size: 1.4em;
+        }
+        .logo-container {
+            margin-bottom: 32px;
+        }
+        .logo {
+            width: 140px;
+        }
+        .whatsapp-button-container {
+            margin-top: 32px;
+        }
+        .whatsapp-button {
+            font-size: 1em;
+            padding: 12px 20px;
+        }
+        .info-adicional {
+            margin-top: 28px;
+            font-size: 0.95em;
+        }
+    }
     @media (max-width: 600px) {
-  body::before {
-    background: linear-gradient(
-      to bottom,
-      rgba(128, 0, 128, 0.6) 0%,
-      rgba(0,0,0,0.2) 25%,
-      rgba(0,0,0,0.2) 75%,
-      rgba(128, 0, 128, 0.6) 100%
-    );
-    /* Hace que el degradado sea vertical y más suave en el centro */
-  }
-}
-    /* Para teléfonos y tablets: zoom al fondo y más espacio entre elementos */
-@media (max-width: 900px) {
-  body::before {
-    /* ¡ZOOM! El degradado radial se hace mucho más grande */
-    background: radial-gradient(circle at 50% 50%, rgba(128, 0, 128, 0.45) 0%, rgba(128, 0, 128, 0.25) 40%, rgba(0,0,0,0.92) 90%);
-    transform: scale(2.2); /* Esto es el "zoom" */
-    filter: blur(0.5px);   /* Suaviza el borde del difuminado */
-  }
-  .container {
-    min-height: 80vh;  /* La caja se estira, así los elementos no quedan todos juntos */
-    padding-top: 40px;
-    padding-bottom: 40px;
-    max-width: 98vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-  }
-  .slogan {
-    margin-bottom: 32px;
-    margin-top: 0;
-  }
-  .logo-container {
-    margin-bottom: 32px;
-  }
-  .whatsapp-button-container {
-    margin-top: 32px;
-  }
-  .info-adicional {
-    margin-top: 32px;
-  }
-}
-}
-        
+        .container {
+            min-height: 76vh;
+            padding: 20px 4px;
+            border-radius: 11px;
+        }
+        .logo {
+            width: 110px;
+        }
+        .slogan {
+            font-size: 1.1em;
+            margin-bottom: 24px;
+        }
+        .info-adicional {
+            margin-top: 18px;
+            font-size: 0.92em;
+        }
+    }
     </style>
 </head>
 <body>
@@ -222,30 +200,22 @@
         <div class="whatsapp-button-container">
             <a href="https://wa.link/fase43" target="_blank" class="whatsapp-button" id="whatsappBtn">
                 <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.5-7c-18.4-28.4-28.2-61.3-28.2-96.3 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-</svg>
+                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115.1-67.1-157zm-157 342c-33.7 0-66.7-9-95.5-26.2l-6.8-4-69.8 18.3 18.6-68.1-4.4-7C42 314 32 289.7 32 254c0-105.9 86.1-192 191.9-192 51.3 0 99.5 20 135.8 56.2C395.2 154.9 416 201.9 416 254c0 105.9-86 192-192.1 192zm101.6-138.3c-5.6-2.8-33.1-16.3-38.2-18.1-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18.1-17.5 21.8-3.2 3.7-6.4 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66.1-5.7-9.8 5.7-9.1 16.3-30.2 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.2-17.1-41.4-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.7 6.9c-5.1 5.6-19.2 18.8-19.2 45.9 0 27.1 19.7 53.3 22.4 57 2.8 3.7 38.8 59.3 94.2 80.8 13.2 5.1 23.5 8.2 31.5 10.5 13.2 4.2 25.2 3.6 34.8 2.2 10.6-1.6 33.1-13.5 37.8-26.6 4.7-13.1 4.7-24.3 3.2-26.6-1.4-2.3-5.1-3.7-10.7-6.5z"/>
+                </svg>
                 CREA TU USUARIO
             </a>
         <div class="info-adicional">
-    Atención 24hs, sin mínimo de carga y bajadas libres
-</div>
+            Atención 24hs, sin mínimo de carga y bajadas libres
+        </div>
+        </div>
     </div>
 
     <script>
-        // Script JavaScript aquí
         document.addEventListener('DOMContentLoaded', function() {
-            // Define el color principal aquí (en formato hexadecimal)
-            // Puedes cambiarlo a un verde (#00FF00), amarillo (#FFFF00), etc.
-            const mainColor = '#800080'; // Morado por defecto, como en tu imagen
-            const mainColorShadow = 'rgba(128, 0, 128, 0.7)'; // Sombra un poco más clara para el hover
-
-            // Establece las variables CSS para que los estilos puedan usarlas
+            const mainColor = '#800080';
+            const mainColorShadow = 'rgba(128, 0, 128, 0.7)';
             document.documentElement.style.setProperty('--main-color', mainColor);
             document.documentElement.style.setProperty('--main-color-shadow', mainColorShadow);
-
-            // Nota: La URL de WhatsApp ahora está directamente en el HTML,
-            // por lo que no es necesario modificarla desde JavaScript aquí.
-            // Esto simplifica el código y la edición.
         });
     </script>
 </body>
