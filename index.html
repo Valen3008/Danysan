@@ -29,7 +29,6 @@
       content: '';
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      /* Fondo radial más oscuro en el centro y más en los bordes */
       background: radial-gradient(ellipse at 50% 40%, rgba(128,0,128,0.52) 0%, rgba(28,0,38,0.78) 55%, #000 100%);
       z-index: -1;
       width: 100vw; height: 100vh;
@@ -45,12 +44,13 @@
       width: 96vw;
       max-width: 410px;
       min-height: 70vh;
-      background: rgba(20,0,20,0.17);
+      /* Fondo/transparencia solo para móvil, se quita en PC */
+      background: none;
       padding: 28px 16px;
       box-sizing: border-box;
-      border-radius: 26px;
-      backdrop-filter: blur(3px);
-      box-shadow: 0 10px 32px 0 rgba(128,0,128,0.13);
+      border-radius: 0;
+      backdrop-filter: none;
+      box-shadow: none;
       z-index: 1;
     }
     .logo-container {
@@ -142,6 +142,10 @@
         justify-content: space-between;
         gap: 30px;
         padding: 18px 4vw 16px 4vw;
+        background: rgba(20,0,20,0.17);
+        border-radius: 26px;
+        backdrop-filter: blur(3px);
+        box-shadow: 0 10px 32px 0 rgba(128,0,128,0.13);
       }
       .slogan {
         font-size: 1.45em;
